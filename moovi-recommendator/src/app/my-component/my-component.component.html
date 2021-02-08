@@ -4,4 +4,17 @@
         <span class="ranking">{{movie.id}}</span> {{movie.name}}
       </li>
 </ul>
-  
+
+<h2>Recommend me a movie!</h2>
+<button (click)="getRandomMovie()" >recommend me a random movie!</button>
+<p *ngIf="recommendedMovie"> recommended movie is: {{recommendedMovie.original_title}}</p>
+
+
+<h2>Find a particular movie!</h2>
+<button (click)="getMovie()" >search:</button>
+<input [(ngModel)]="userMovieID">
+<p *ngIf="userMovie"> Your movie is: {{userMovie.original_title}}</p>
+
+<h3>Super brilliant, machine-learning algorithm.</h3>
+<!-- todo -->
+<!-- User something from: https://material.angular.io/components/categories maybe a stepper? -->

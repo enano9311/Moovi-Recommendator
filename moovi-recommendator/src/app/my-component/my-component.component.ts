@@ -11,13 +11,16 @@ import {FAKEMOVIES} from '../fake-movies';
 @Injectable()
 export class MyComponentComponent implements OnInit {
 
+  public recommendedMovie: any;
+  public userMovie: any;
+  public userMovieID: string ="";
+
   constructor(
     private movieService: MovieService
     ){}
   fakies = FAKEMOVIES;
   
   ngOnInit(): void {
-    // let service = new MovieService(this.client);
     this.movieService.getMovie('123').subscribe(
       data => {
         console.log(data)
@@ -25,4 +28,21 @@ export class MyComponentComponent implements OnInit {
     );
   }
 
+  public getRandomMovie(): void {
+    this.movieService.getMovie(Math.floor(1000*Math.random()).toString()).subscribe(
+      data => {
+        this.recommendedMovie = data
+      }
+    );
+
+  }
+
+  public getMovie(): void {
+    this.movieService.getMovie(this.userMovieID).subscribe(
+      data => {
+        this.userMovie = data
+      }
+    );
+
+  }
 }
