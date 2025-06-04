@@ -14,11 +14,11 @@ export class MovieService {
     readonly APIUrlBase = "https://api.themoviedb.org/3/";
     readonly APIKey = "97b251b72917b4561f08c8a198d0b513";
 
-    getMovie(id:String): Observable<Movie> {
+    getMovie(id: string): Observable<Movie> {
         return this.http.get<Movie>(this.APIUrlBase + 'movie/' + id + '?api_key=' + this.APIKey);
     }
 
-    getTVShow(id: String): Observable<TVShow> {
-        return this.http.get<TVShow>(this.APIUrlBase + 'TV/' + id + '?api_key=' + this.APIKey);
+    getTVShow(id: string): Observable<TVShow> {
+        return this.http.get<TVShow>(this.APIUrlBase + 'tv/' + id + '?api_key=' + this.APIKey);
     }
 }
