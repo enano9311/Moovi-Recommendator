@@ -1,7 +1,21 @@
-<h2>Movies</h2>
+<h2>Movie Search</h2>
+<input [(ngModel)]="searchTerm" placeholder="Search movies" />
+
 <ul class="movie">
-    <li *ngFor="let movie of fakies">
-        <span class="ranking">{{movie.id}}</span> {{movie.name}}
-      </li>
+  <li *ngFor="let movie of filteredMovies">
+    {{movie.title}} ({{movie.year}})
+    <select [(ngModel)]="movie.ranking">
+      <option [ngValue]="undefined">Rank</option>
+      <option *ngFor="let r of [1,2,3,4,5]" [ngValue]="r">{{r}}</option>
+    </select>
+  </li>
 </ul>
-  
+
+<button (click)="showBestMatch()">Best Match</button>
+<div *ngIf="bestMatch">Best match: {{bestMatch.title}}</div>
+
+<button (click)="suggestRandom()">Random Suggestion</button>
+<div *ngIf="randomMovie">Random movie: {{randomMovie.title}}</div>
+
+<button (click)="showBadMatch()">Bad Match</button>
+<div *ngIf="badMatch">Bad match: {{badMatch.title}}</div>

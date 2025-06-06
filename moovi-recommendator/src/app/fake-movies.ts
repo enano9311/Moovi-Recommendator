@@ -1,14 +1,41 @@
 import { Movie } from './movie';
 
 export const FAKEMOVIES: Movie[] = [
-  { id: 11, name: 'Harry Potter 1' },
-  { id: 12, name: 'Harry Potter 2' },
-  { id: 13, name: 'Harry Potter 3' },
-  { id: 14, name: 'Harry Potter 4' },
-  { id: 15, name: 'Harry Potter 5' },
-  { id: 16, name: 'Harry Potter 6' },
-  { id: 17, name: 'Harry Potter 7.1' },
-  { id: 18, name: 'Harry Potter 7.2' },
-  { id: 19, name: 'Fantastic Beasts 1' },
-  { id: 20, name: 'Fantastic Beasts 2' }
+
+  {
+    id: 1,
+    title: 'Sample Movie 1',
+    year: 2015,
+    cast: ['Actor A', 'Actor B'],
+    genres: ['Action'],
+    runtime: 110,
+    director: 'Dir A',
+    rating: 7.1,
+    votes: 15000,
+    description: 'Sample Movie 1 released in 2015.'
+  },
+  {
+    id: 2,
+    title: 'Sample Movie 2',
+    year: 2018,
+    cast: ['Actor C', 'Actor D'],
+    genres: ['Drama'],
+    runtime: 100,
+    director: 'Dir B',
+    rating: 6.5,
+    votes: 8000,
+    description: 'Sample Movie 2 released in 2018.'
+  },
+  {
+    id: 3,
+    title: 'Sample Movie 3',
+    year: 2020,
+    cast: ['Actor E'],
+    genres: ['Comedy'],
+    runtime: 95,
+    director: 'Dir C',
+    rating: 7.9,
+    votes: 22000,
+    description: 'Sample Movie 3 released in 2020.'
+  }
 ];
