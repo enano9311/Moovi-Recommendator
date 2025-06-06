@@ -1,6 +1,7 @@
 import { Movie } from './movie';
 
 export const FAKEMOVIES: Movie[] = [
+
   {
     id: 1,
     title: 'Sample Movie 1',
